@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MultipeerChat" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vGQ-aM-bxk">
+                                <rect key="frame" x="24" y="188" width="327" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="gg1-Xs-08q">
+                                <rect key="frame" x="8" y="48" width="359" height="120"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="nIb-l7-b2v"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u7T-zR-hTW">
+                                <rect key="frame" x="170.5" y="242" width="34" height="30"/>
+                                <state key="normal" title="send"/>
+                                <connections>
+                                    <action selector="sendChat:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IO4-BH-neG"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TkZ-yk-Li4">
+                                <rect key="frame" x="166.5" y="290" width="42" height="30"/>
+                                <state key="normal" title="brows"/>
+                                <connections>
+                                    <action selector="showBrowser:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Nba-JY-aig"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="TkZ-yk-Li4" firstAttribute="top" secondItem="u7T-zR-hTW" secondAttribute="bottom" constant="18" id="5ZM-5W-Mbf"/>
+                            <constraint firstItem="u7T-zR-hTW" firstAttribute="top" secondItem="vGQ-aM-bxk" secondAttribute="bottom" constant="24" id="5jK-n0-70O"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="vGQ-aM-bxk" secondAttribute="trailing" constant="8" id="6Jh-8U-yYw"/>
+                            <constraint firstItem="gg1-Xs-08q" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="8" id="BZM-5h-Id9"/>
+                            <constraint firstItem="vGQ-aM-bxk" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="HEm-Pz-5pJ"/>
+                            <constraint firstItem="TkZ-yk-Li4" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="LNI-LD-tfh"/>
+                            <constraint firstAttribute="trailing" secondItem="gg1-Xs-08q" secondAttribute="trailing" constant="8" id="PmP-tE-8lM"/>
+                            <constraint firstItem="vGQ-aM-bxk" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="8" id="aES-Ft-prS"/>
+                            <constraint firstItem="u7T-zR-hTW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="c5P-H3-Zvv"/>
+                            <constraint firstItem="gg1-Xs-08q" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="28" id="dN8-al-Lud"/>
+                            <constraint firstItem="vGQ-aM-bxk" firstAttribute="top" secondItem="gg1-Xs-08q" secondAttribute="bottom" constant="20" id="jVZ-x1-uAt"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="chatView" destination="gg1-Xs-08q" id="iyp-qZ-jBo"/>
+                        <outlet property="messageField" destination="vGQ-aM-bxk" id="BgP-rh-9xN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
